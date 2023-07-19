@@ -4,8 +4,92 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .registr {
+            background-color: rgb(255, 241, 224);
+            width: 50%;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        h3 {
+            text-align: center;
+        }
+
+        .form {
+            margin-bottom: 10px;
+        }
+
+        .form label {
+            display: block;
+            font-weight: bold;
+        }
+
+        .form input {
+            width: 100%;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            box-sizing: border-box;
+        }
+
+        .bt {
+            background-color: #838383;
+            color: rgb(0, 0, 0);
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+        .err1{
+            display: none;
+            color: rgb(172, 0, 0);
+            position: absolute;
+            right: 22px;
+        }
+        .err2{
+            display: none;
+            color: rgb(172, 0, 0);
+            position: absolute;
+            right: 22px;
+        }
+    </style>
 </head>
 <body>
-    
+    <div class="registr">
+        <h3>Registration</h3>
+        <div class="form">
+            <label for="email">Email: <span class="err1">Wrong email addres</span></label>
+            <input type="email" id="email" required>
+        </div>
+        <div class="form">
+            <label for="password">Password:</label>
+            <input type="password" id="password" required>
+        </div>
+        <div class="form">
+            <label for="repeatPassword">Repeat: <span class="err2">Passwords must match</span></label>
+            <input type="password" id="repeatPassword" required>
+        </div>
+        <button class="bt" onclick="submitForm()">Sign Up</button>
+    </div>
+
+    <script>
+        function validateEmail(email) {
+            var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            return emailPattern.test(email);
+        }
+        function submitForm() {
+            var email = document.getElementById("email").value;
+            if (!validateEmail(email)) {
+                
+            }
+        }
+
+    </script>
 </body>
 </html>
