@@ -84,45 +84,6 @@
         <button class="bt" onclick="submitForm()">Sign Up</button>
     </div>
 
-    <script>
-        function validateEmail(email) {
-            var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-            return emailPattern.test(email);
-        }
-
-        function submitForm() {
-            var email = document.getElementById("email").value;
-            var password = document.getElementById("password").value;
-            var repeatPassword = document.getElementById("repeatPassword").value;
-            var emailError = document.querySelector(".err1");
-            var repeatPasswordError = document.querySelector(".err2");
-            var passwordMatchError = document.querySelector(".err3");
-
-            if (!validateEmail(email)) {
-                emailError.style.display = "block";
-            } else {
-                emailError.style.display = "none";
-            }
-
-            if (password !== repeatPassword) {
-                repeatPasswordError.style.display = "block";
-            } else {
-                repeatPasswordError.style.display = "none";
-            }
-
-            if (password.length < 6) {
-                passwordMatchError.textContent = "Password must be at least 6 characters long";
-                passwordMatchError.style.display = "block";
-            } else {
-                passwordMatchError.style.display = "none";
-            }
-
-            if (!validateEmail(email) || password !== repeatPassword || password.length < 6) {
-                return;
-            }
-
-            alert("Registration successful!");
-        }
     </script>
 </body>
 </html>
