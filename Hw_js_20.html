@@ -4,67 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registration</title>
-    <style>
-        .registr {
-            background-color: rgb(255, 241, 224);
-            width: 50%;
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            padding: 20px;
-            box-sizing: border-box;
-        }
-
-        h3 {
-            text-align: center;
-        }
-
-        .form {
-            margin-bottom: 10px;
-        }
-
-        .form label {
-            display: block;
-            font-weight: bold;
-        }
-
-        .form input {
-            width: 100%;
-            padding: 5px;
-            border: 1px solid #ccc;
-            border-radius: 3px;
-            box-sizing: border-box;
-        }
-
-        .bt {
-            background-color: #838383;
-            color: rgb(0, 0, 0);
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            width: 100%;
-        }
-        .err1{
-            display: none;
-            color: rgb(172, 0, 0);
-            position: absolute;
-            right: 22px;
-        }
-        .err2{
-            display: none;
-            color: rgb(172, 0, 0);
-            position: absolute;
-            right: 22px;
-        }
-        .err3{
-            display: none;
-            color: rgb(172, 0, 0);
-            position: absolute;
-            right: 22px;
-        }
-    </style>
+    <link rel="stylesheet" href="Hw_js_20.css">
 </head>
 <body>
     <div class="registr">
@@ -84,80 +24,7 @@
         <button class="bt" onclick="submitForm()">Sign Up</button>
     </div>
 
-    <script>
-        function validateEmail(email) {
-            var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-            return emailPattern.test(email);
-        }
-    
-        function setCookie(name, value, days) {
-            var expires = "";
-            if (days) {
-                var date = new Date();
-                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-                expires = "; expires=" + date.toUTCString();
-            }
-            document.cookie = name + "=" + (value || "") + expires + "; path=/";
-        }
-    
-        function getCookie(name) {
-            var nameEQ = name + "=";
-            var cookies = document.cookie.split(';');
-            for (var i = 0; i < cookies.length; i++) {
-                var cookie = cookies[i];
-                while (cookie.charAt(0) == ' ') {
-                    cookie = cookie.substring(1, cookie.length);
-                }
-                if (cookie.indexOf(nameEQ) == 0) {
-                    return cookie.substring(nameEQ.length, cookie.length);
-                }
-            }
-            return null;
-        }
-    
-        function submitForm() {
-            var email = document.getElementById("email").value;
-            var password = document.getElementById("password").value;
-            var repeatPassword = document.getElementById("repeatPassword").value;
-            var emailError = document.querySelector(".err1");
-            var repeatPasswordError = document.querySelector(".err2");
-            var passwordMatchError = document.querySelector(".err3");
-    
-            if (!validateEmail(email)) {
-                emailError.style.display = "block";
-            } else {
-                emailError.style.display = "none";
-            }
-    
-            if (password !== repeatPassword) {
-                repeatPasswordError.style.display = "block";
-            } else {
-                repeatPasswordError.style.display = "none";
-            }
-    
-            if (password.length < 6) {
-                passwordMatchError.textContent = "Password must be at least 6 characters long";
-                passwordMatchError.style.display = "block";
-            } else {
-                passwordMatchError.style.display = "none";
-            }
-    
-            if (!validateEmail(email) || password !== repeatPassword || password.length < 6) {
-                return;
-            }
-    
-            setCookie("user_email", email, 7);
-    
-            window.location.href = "user_info.html";
-        }
-
-        window.onload = function () {
-            var userEmail = getCookie("user_email");
-            if (userEmail) {
-                window.location.href = "user_info.html";
-            }
-        };
-    </script>
+    <script src="Hw_js_20.js"></script>
 </body>
 </html>
 

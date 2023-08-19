@@ -1,0 +1,59 @@
+.registr {
+    background-color: rgb(255, 241, 224);
+    width: 50%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+h3 {
+    text-align: center;
+}
+
+.form {
+    margin-bottom: 10px;
+}
+
+.form label {
+    display: block;
+    font-weight: bold;
+}
+
+.form input {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+.bt {
+    background-color: #838383;
+    color: rgb(0, 0, 0);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+.err1{
+    display: none;
+    color: rgb(172, 0, 0);
+    position: absolute;
+    right: 22px;
+}
+.err2{
+    display: none;
+    color: rgb(172, 0, 0);
+    position: absolute;
+    right: 22px;
+}
+.err3{
+    display: none;
+    color: rgb(172, 0, 0);
+    position: absolute;
+    right: 22px;
+}
